@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    div.contentwrap
+        div.container
+            div.page-header
+                h2=title
+            form.form-horizontal(action="/process/signUp" name="createForm" method="POST" onsubmit="return checkInput()")
+                div.form-group
+                    label.col-sm-3.control-label(for="id") 아이디
+                    div.col-sm-3
+                        input.form-control(type="text" name="id" placeholder="아이디" autofocus)
+
+                div.form-group
+                    label.col-sm-3.control-label(for="password") 비밀번호
+                    div.col-sm-3
+                        input.form-control(type="password" name="password" placeholder="비밀번호")
+                        p.help-blcok 숫자, 특수문자 포함 8자이상
+                div.form-group
+                    label.col-sm-3.control-label(for="CHKPW") 비밀번호 확인
+                    div.col-sm-3
+                        input.form-control(type="password" name="CHKPW" placeholder="비밀번호확인")
+                        p.help-blcok 비밀번호를 한번더 입력해 주세요
+                div.form-group
+                    label.col-sm-3.control-label(for="name") 이름
+                    div.col-sm-3
+                        input.form-control(type="text" name="name" placeholder="이름")
+                div.form-group
+                    label.col-sm-3.control-label(for="email") 이메일
+                    div.col-sm-3
+                        input.form-control(type="text" name="email" placeholder="hong@gmail.com")
+                div.form-group
+                    label.col-sm-3.control-label(for="tel") 전화번호
+                    div.col-sm-3
+                        input.form-control(type="text" name="tel" placeholder="01012345678")
+                        p.help-blcok -을 빼고 입력해 주세요
+                div.form-group
+                    label.col-sm-3.control-label(for="signUp")
+                    div.col-sm-6
+                        button.btn.btn-primary(type="submit") 회원가입
+                        a.btn.btn-primary(onclick="location.href='/'") 메인으로
