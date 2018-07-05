@@ -1,0 +1,52 @@
+
+head
+    link(rel='stylesheet', href='/stylesheets/resister.css')
+block content
+    div#company-list 리스트 영역
+    div.contentwrap
+        div.container
+            div.page-header
+                h2='사업장 등록'
+            form.form-horizontal(action="/business/resister" name="resisterForm" method="POST")
+                div.form-group
+                    label.col-sm-3.control-label(for="id") 사업자등록번호
+                    div.col-sm-3
+                        input.form-control(type="text" name="id" placeholder="사업자등록번호" autofocus)
+
+                div.form-group
+                    label.col-sm-3.control-label(for="name") 사업장명
+                    div.col-sm-3
+                        input.form-control(type="text" name="name" placeholder="사업장명")
+                        p.help-blcok -을 빼고 입력해주세요
+                div.form-group
+                    // 개인 법인
+                    label.col-sm-3.control-label(for="gubun") 구분
+                    div.col-sm-3
+                        select(name='gubun') // name 바꾸기
+                            option(value='01') 01.법인
+                            option(value='02') 02.개인
+                div.form-group
+                    label.col-sm-3.control-label(for="ceo") 대표자성명
+                    div.col-sm-3
+                        input.form-control(type="text" name="ceo" placeholder="대표자성명")
+                div.form-group
+                    label.col-sm-3.control-label(for="country") 외국인여부
+                    div.col-sm-3
+                        select(name='country')
+                            option(value='01') 01.내국인
+                            option(value='02') 02.외국인
+                div.form-group
+                    label.col-sm-3.control-label(for="rrn") 주민등록번호
+                    div.col-sm-3
+                        input.form-control(type="text" name="rrn" placeholder="123456-1234567")
+                        p.help-block -을 빼고 입력해주세요
+                //div.form-group
+                //    label.col-sm-3.control-label(for="tel") 전화번호
+                //    div.col-sm-3
+                //        input.form-control(type="text" name="tel" placeholder="01012345678")
+                //        p.help-blcok -을 빼고 입력해 주세요
+                div.form-group
+                    label.col-sm-3.control-label(for="signUp")
+                    div.col-sm-6
+                        button.btn.btn-primary(type="submit") 등록
+                        a.btn.btn-primary(onclick="location.href='/'") 메인으로
